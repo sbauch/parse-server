@@ -36,7 +36,7 @@ export class FilesRouter {
     const config = new Config(req.params.appId);
     const filesController = config.filesController;
     const filename = req.params.filename;
-    const fileUrl = filesController.getFileLocation(config, filename);
+    const fileUrl = filesController.getFileData(config, filename);
     res.redirect(fileUrl);
   }
 

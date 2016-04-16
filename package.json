@@ -1,5 +1,5 @@
 {
-  "name": "parse-server",
+  "name": "sbauch-parse-server",
   "version": "2.2.7",
   "description": "An express module providing a Parse-compatible API server",
   "main": "lib/index.js",

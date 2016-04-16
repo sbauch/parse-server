@@ -9,13 +9,13 @@ import mime from 'mime';
 export class FilesController extends AdaptableController {
 
   getFileData(config, filename) {
-    return this.adapter.getFileData(filename);
+    return this.adapter.getFileLocation(filename);
   }
 
   getFileLocation(config, filename) {
     return this.adapter.getFileLocation(filename);
   }
-  
+
   createFile(config, filename, data, contentType) {
 
     let extname = path.extname(filename);

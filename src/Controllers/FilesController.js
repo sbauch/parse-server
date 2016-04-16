@@ -12,6 +12,10 @@ export class FilesController extends AdaptableController {
     return this.adapter.getFileData(filename);
   }
 
+  getFileLocation(config, filename) {
+    return this.adapter.getFileLocation(filename);
+  }
+  
   createFile(config, filename, data, contentType) {
 
     let extname = path.extname(filename);

@@ -36,16 +36,8 @@ export class FilesRouter {
     const config = new Config(req.params.appId);
     const filesController = config.filesController;
     const filename = req.params.filename;
-    filesController.getFileData(config, filename).then((data) => {
-      res.status(200);
-      var contentType = mime.lookup(filename);
-      res.set('Content-Type', contentType);
-      res.end(data);
-    }).catch((err) => {
-      res.status(404);
-      res.set('Content-Type', 'text/plain');
-      res.end('File not found.');
-    });
+    const fileUrl = filesController.getFileLocation(config, filename);
+    res.redirect(fileUrl);
   }
 
   createHandler(req, res, next) {
